@@ -210,6 +210,19 @@ Tested against **Technitium DNS Server v14.3** on Alpine Linux. All 36 API endpo
 - Node.js >= 18
 - Technitium DNS Server v14+
 
+## Building MCP Bundle (`.mcpb`)
+
+MCP Bundles are supported in Claude and enable you to easily install the MCP server with a Chrome extension like experience. This simplifies the adoption as it's completely GUI driven, including managing the environment variables. 
+
+To build the bundle:
+
+```
+npm install          # picks up @anthropic-ai/mcpb
+npm run build:mcpb   # compiles TS then runs mcpb pack
+```
+
+This will generate `technitium-mcp-secure.mcpb` which can be imported into Claude.
+
 ## Changelog
 
 ### v1.2.0
