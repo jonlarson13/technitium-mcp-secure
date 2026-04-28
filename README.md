@@ -201,7 +201,7 @@ If you need any of these, contributions are welcome or open an issue.
 
 ## Compatibility
 
-Tested against **Technitium DNS Server v14.3** on Alpine Linux. All 36 API endpoints verified against the live v14 API.
+Tested against **Technitium DNS Server v14.3** on Alpine Linux. All 39 API endpoints verified against the live v14 API.
 
 **Note:** Technitium's API paths changed between versions. If you see 404 errors, check that your server version is v14+. Earlier versions used different paths (e.g. `/api/allowedZones/list` instead of `/api/allowed/list`).
 
@@ -216,18 +216,18 @@ MCP Bundles are supported in Claude and enable you to easily install the MCP ser
 
 To build the bundle:
 
-```
+```bash
 npm install          # picks up @anthropic-ai/mcpb
 npm run build:mcpb   # compiles TS then runs mcpb pack
 ```
 
-This will generate `technitium-mcp-secure.mcpb` which can be imported into Claude.
+This will generate a `.mcpb` file which can be opened in Claude Desktop or the Claude web app to trigger the install dialog. Credentials are managed by that dialog and stored in the OS keychain — `TECHNITIUM_TOKEN_FILE` is not used in this flow.
 
 ## Changelog
 
 ### v1.2.0
 - Add 19 new tools (39 total): remove/flush allowed & blocked, delete cached, enable/disable/configure/export zones, server settings management, temporary blocking disable, block list updates, app store/install/uninstall/config, DNSSEC info, update check
-- All 36 API endpoints verified returning 200 against live Technitium v14.3
+- All 39 API endpoints verified returning 200 against live Technitium v14.3
 - Add "Not Yet Implemented" section documenting available API categories
 
 ### v1.1.1
